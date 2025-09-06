@@ -1,0 +1,2151 @@
+Based on your request to "make the complete code" and the previous instruction to modify the services dropdown to a 4x4 portion (grid layout), I’ll provide the complete HTML and CSS code, incorporating the 4x4 grid for the services dropdown while preserving the rest of your original code. The changes will focus on updating the `.SubmenuDivs` and related styles to achieve a 4x4 grid layout for the services dropdown menu, with responsive adjustments for smaller screens. I’ll ensure the code remains functional and consistent with your existing design.
+
+Below is the complete code, combining your provided HTML, CSS, and JavaScript, with the modified CSS for the services dropdown to display in a 4x4 grid.
+
+```html:disable-run
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="facebook-domain-verification" content="0lj5g96mmdczn1g9sq9bp78ra1105e" />
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="description" content="Integrated Enterprises (India) Limited is the best financial services company in India. We also provide investment planning portal consultancy & advisory firm. We have 40+ yrs of service, 1 million+ satisfied customers, 100+ branches & 1500+ committed employees." />
+    <meta name="keywords" content="Demat Account, Trading services, Insurance, NPS,commodity trading, equity , mutual funds,investments in mutual funds,investments in mutual funds online,mutual funds online buy,online trading, mutual fund services, IPO, NCD BONDS, Health Insurance, Life Insurance,financial services company in india,financial consulting firms in india,top financial services,financial services in india, INTGERATED INDIA" />
+    <meta name="geo.region" content="IN-TN" />
+    <meta name="geo.placename" content="Chennai" />
+    <meta name="geo.position" content="13.04850;80.23300" />
+    <meta name="ICBM" content="13.04850, 80.23300" />
+    <meta name="theme-color" content="#EF7F1B"/>
+    <meta property="og:title" content="Demat Account & Stock Trading Company in India" />
+    <meta property="og:type" content="Demat Account & Stock Trading Company" />
+    <meta property="og:site_name" content="Integratedindia" />
+    <meta property="og:url" content="https://www.integratedindia.in/" />
+    <meta property="og:description" content="Integrated Enterprises (India) Private Limited is an institution with over 4 decades of trust and track record in Financial Services Industry. The Company was promoted as a Private Limited Company in the year 1973 and was later converted as a Public Limited Company in the year 1991." />
+    <meta property="og:image" content="https://www.integratedindia.in/images/IepLoagoWith50YearCelbImg.png" />
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="https://twitter.com/IntegratedTweet" />
+    <meta name="twitter:title" content="Demat Account & Stock Trading Company in India"/>
+    <meta name="twitter:description" content="Integrated is the best Demat Account & Stock Trading Company in India. !"/>
+    <meta name="twitter:image" content="https://www.integratedindia.in/img/Logo_1.gif" />
+
+    <script type="text/javascript" src="Scripts/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="Scripts/AjaxLoaderV2.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script src="slick/jquery.slicknav.js"></script>
+    <link rel="stylesheet" type="text/css" href="Styles/typography.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+
+    <title>Integrated India</title>
+
+    <style>
+        /* General Body Styles */
+        body {
+            margin: 0;
+        }
+
+        /* Slider Styles */
+        .slick-slider {
+            position: relative;
+            display: block;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -khtml-user-select: none;
+            -ms-touch-action: pan-y;
+            touch-action: pan-y;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .slick-list {
+            position: relative;
+            display: block;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+        .slick-list:focus {
+            outline: none;
+        }
+        .slick-list.dragging {
+            cursor: pointer;
+            cursor: hand;
+        }
+        .slick-slider .slick-track,
+        .slick-slider .slick-list {
+            -webkit-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+            -ms-transform: translate3d(0, 0, 0);
+            -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+        .slick-track {
+            position: relative;
+            top: 0;
+            left: 0;
+            display: block;
+        }
+        .slick-track:before,
+        .slick-track:after {
+            display: table;
+            content: '';
+        }
+        .slick-track:after {
+            clear: both;
+        }
+        .slick-loading .slick-track {
+            visibility: hidden;
+        }
+        .slick-slide {
+            display: none;
+            float: left;
+            height: 100%;
+            min-height: 1px;
+        }
+        [dir='rtl'] .slick-slide {
+            float: right;
+        }
+        .slick-slide img {
+            display: block;
+        }
+        .slick-slide.slick-loading img {
+            display: none;
+        }
+        .slick-slide.dragging img {
+            pointer-events: none;
+        }
+        .slick-initialized .slick-slide {
+            display: block;
+        }
+        .slick-loading .slick-slide {
+            visibility: hidden;
+        }
+        .slick-vertical .slick-slide {
+            display: block;
+            height: auto;
+            border: 1px solid transparent;
+        }
+        .slick-arrow.slick-hidden {
+            display: none;
+        }
+        .slick-loading .slick-list {
+            background: #fff url('./ajax-loader.gif') center center no-repeat;
+        }
+
+        /* Icons */
+        @font-face {
+            font-family: 'slick';
+            font-weight: normal;
+            font-style: normal;
+            src: url('./fonts/slick.eot');
+            src: url('./fonts/slick.eot?#iefix') format('embedded-opentype'), url('./fonts/slick.woff') format('woff'), url('./fonts/slick.ttf') format('truetype'), url('./fonts/slick.svg#slick') format('svg');
+        }
+
+        /* Arrows */
+        .slick-prev,
+        .slick-next {
+            font-size: 0;
+            line-height: 0;
+            position: absolute;
+            top: 50%;
+            display: block;
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            margin-top: -10px\9; /*lte IE 8*/
+            -webkit-transform: translate(0, -50%);
+            -ms-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+            cursor: pointer;
+            border-radius: 25px;
+            color: #9298A0;
+            border: none;
+            outline: none;
+            background: transparent;
+            z-index: 10;
+        }
+        .slick-prev:hover,
+        .slick-prev:focus,
+        .slick-next:hover,
+        .slick-next:focus {
+            color: #9298A0;
+            outline: none;
+            background: transparent;
+        }
+        .slick-prev:hover:before,
+        .slick-prev:focus:before,
+        .slick-next:hover:before,
+        .slick-next:focus:before {
+            opacity: 1;
+        }
+        .slick-prev.slick-disabled:before,
+        .slick-next.slick-disabled:before {
+            opacity: .25;
+        }
+        .slick-prev:before,
+        .slick-next:before {
+            font-family: 'slick';
+            font-size: 35px;
+            line-height: 1.4;
+            opacity: .75;
+            color: #9298A0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .slick-prev {
+            left: -50px;
+        }
+        [dir='rtl'] .slick-prev {
+            right: -50px;
+            left: auto;
+        }
+        .slick-prev:before {
+            content: '←';
+        }
+        [dir='rtl'] .slick-prev:before {
+            content: '→';
+        }
+        .slick-next {
+            right: -50px;
+        }
+        [dir='rtl'] .slick-next {
+            right: auto;
+            left: -50px;
+        }
+        .slick-next:before {
+            content: '→';
+        }
+        [dir='rtl'] .slick-next:before {
+            content: '←';
+        }
+
+        /* Dots */
+        .slick-slider {
+            margin-bottom: 30px;
+        }
+        .slick-dots {
+            position: absolute;
+            bottom: -45px;
+            display: block;
+            width: 100%;
+            padding: 0;
+            list-style: none;
+            text-align: center;
+        }
+        .slick-dots li {
+            position: relative;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin: 0 5px;
+            padding: 0;
+            cursor: pointer;
+        }
+        .slick-dots li button {
+            font-size: 0;
+            line-height: 0;
+            display: block;
+            width: 20px;
+            height: 20px;
+            padding: 5px;
+            cursor: pointer;
+            color: transparent;
+            border: 0;
+            outline: none;
+            background: transparent;
+        }
+        .slick-dots li button:hover,
+        .slick-dots li button:focus {
+            outline: none;
+        }
+        .slick-dots li button:hover:before,
+        .slick-dots li button:focus:before {
+            opacity: 1;
+        }
+        .slick-dots li button:before {
+            font-family: 'slick';
+            font-size: 6px;
+            line-height: 20px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            content: '•';
+            text-align: center;
+            opacity: .25;
+            color: black;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .slick-dots li.slick-active button:before {
+            opacity: .75;
+            color: black;
+        }
+
+        /* SlickNav Responsive Mobile Menu */
+        .slicknav_btn {
+            cursor: pointer;
+            display: block;
+            float: right;
+            height: 35px;
+            line-height: 50px;
+            padding: 10px 0 9px;
+            position: relative;
+            vertical-align: middle;
+            width: 44px;
+        }
+        .slicknav_btn .slicknav_icon-bar + .slicknav_icon-bar {
+            margin-top: 0.188em;
+        }
+        .slicknav_menu {
+            *zoom: 1;
+        }
+        .slicknav_menu .slicknav_menutxt {
+            display: block;
+            line-height: 1.188em;
+            float: left;
+        }
+        .slicknav_menu .slicknav_icon {
+            margin: 0.188em 0 0 0.438em;
+        }
+        .slicknav_menu .slicknav_no-text {
+            margin: 0;
+        }
+        .slicknav_menu .slicknav_icon-bar {
+            display: block;
+            width: 1.125em;
+            height: 0.125em;
+            margin: 0 auto;
+            -webkit-border-radius: 1px;
+            -moz-border-radius: 1px;
+            border-radius: 1px;
+            -webkit-transition: all 0.2s linear;
+            -moz-transition: all 0.2s linear;
+            -o-transition: all 0.2s linear;
+            transition: all 0.2s linear;
+        }
+        .slicknav_menu:before {
+            content: " ";
+            display: table;
+        }
+        .slicknav_menu:after {
+            content: " ";
+            display: table;
+            clear: both;
+        }
+        .slicknav_nav {
+            clear: both;
+        }
+        .slicknav_nav ul {
+            display: block;
+        }
+        .slicknav_nav li {
+            display: block;
+            line-height: 30px;
+        }
+        .slicknav_nav li:not(:first-child) {}
+        .slicknav_nav .slicknav_arrow {
+            background: #ededed none repeat scroll 0 0;
+            float: right;
+            text-align: center;
+            width: 35px;
+            color: #666;
+        }
+        .slicknav_nav .slicknav_item {
+            cursor: pointer;
+        }
+        .slicknav_nav .slicknav_item a {
+            display: inline;
+        }
+        .slicknav_nav .slicknav_row {
+            display: block;
+        }
+        .slicknav_nav a {
+            display: block;
+        }
+        .slicknav_nav .slicknav_parent-link a {
+            display: inline;
+        }
+        .slicknav_brand {
+            float: left;
+        }
+        .slicknav_menu {
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        .slicknav_menu > ul {
+            z-index: 9;
+            border: 1px solid rgb(153, 153, 153);
+            display: block;
+            width: 96%;
+            padding: 0px;
+            margin: 2%;
+            background: #ffffff;
+        }
+        .slicknav_menu * {
+            box-sizing: border-box;
+        }
+        .slicknav_menu .slicknav_menutxt {
+            color: #fff;
+            font-weight: bold;
+            text-shadow: 0 1px 3px #000;
+        }
+        .slicknav_btn {
+            border: 1px solid;
+            border-radius: 0;
+            margin: 11px 15px;
+            -webkit-transition: all 0.2s linear;
+            -moz-transition: all 0.2s linear;
+            -o-transition: all 0.2s linear;
+            transition: all 0.2s linear;
+        }
+        .slicknav_nav {
+            color: #fff;
+            font-size: 0.875em;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+        .slicknav_nav ul {
+            list-style: none;
+            overflow: hidden;
+            padding: 0;
+            margin: 0 0 0 20px;
+        }
+        .slicknav_nav .slicknav_row {
+            padding: 5px 10px;
+            margin: 2px 5px;
+        }
+        .slicknav_nav a {
+            padding: 5px 10px;
+            margin: 2px;
+            text-decoration: none;
+            color: #666;
+        }
+        .slicknav_nav .slicknav_txtnode {
+            margin-left: 15px;
+        }
+        .slicknav_nav .slicknav_item a {
+            padding: 0;
+            margin: 0;
+        }
+        .slicknav_nav .slicknav_parent-link a {
+            padding: 0;
+            margin: 0;
+        }
+        .slicknav_brand {
+            color: #fff;
+            font-size: 18px;
+            line-height: 30px;
+            padding: 7px 12px;
+            height: 44px;
+        }
+        .slicknav_nav a:hover {
+            color: #fff;
+            background: #87c056;
+        }
+        .MenuCLoseButn {
+            border: 1px solid #ffffff;
+            background: #ffffff;
+            border-radius: 50%;
+            width: 35px;
+            position: absolute;
+            right: 15px;
+            top: 65px;
+        }
+
+        /* Navbar Styles */
+        #navbar {
+            background: white;
+            transition: 0.4s;
+            position: relative;
+            display: flex;
+            height: 85px;
+            align-items: flex-end;
+            width: 100%;
+            z-index: 100;
+            top: 0;
+            box-sizing: unset;
+        }
+        .loginicon {
+            width: 25px;
+        }
+        .ServIcns {
+            width: 25px;
+        }
+        .Emptylog {
+            width: 5%;
+        }
+        #navbar-right {
+            float: right;
+            position: relative;
+            right: 0%;
+            margin-top: 0px;
+            display: flex;
+            width: 80%;
+            font-family: DM_SANSvar;
+        }
+        .dropdowncls:hover {
+            border-bottom: 2px solid blue;
+        }
+        .dropdowncls:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            width: 800px; /* Adjusted for 4x4 grid */
+            height: auto;
+            top: 64px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-top: 0.5px solid rgb(247, 247, 247);
+            box-shadow: 0px 20px 10px -15px rgba(0, 0, 0, 0.3);
+            z-index: 1;
+            animation: fadeOuthead 500ms 0ms forwards;
+        }
+        @keyframes fadeOuthead {
+            from {
+                transform: translateX(-50%) translateY(-20px);
+                opacity: 0;
+            } to {
+                transform: translateX(-50%) translateY(0px);
+                opacity: 1;
+            }
+        }
+        .MobileMenuBtn {
+            display: block;
+        }
+        .nav-toggle .bar {
+            height: 3px;
+            width: 100%;
+            background-color: black;
+            transition: all 200ms ease-in-out;
+        }
+        .nav-toggle:hover {
+            cursor: pointer;
+        }
+        .LogoDiv {
+            float: right;
+            position: relative;
+            right: 0%;
+        }
+        .MenuDiv {
+            display: flex;
+            width: 100%;
+            justify-content: flex-end;
+            align-items: flex-end;
+        }
+        .dropdown .dropbtn {
+            font-size: 16px;
+            border: none;
+            width: calc(100%/5);
+            outline: none;
+            color: #fff;
+            padding: 10px 12px;
+            background-color: inherit;
+            margin: 0;
+        }
+        .drptbtn {
+            font-size: 15px;
+            border: none;
+            outline: none;
+            padding: 8px;
+            background-color: inherit;
+            margin: 0;
+            color: #333;
+        }
+        .dropmenubox {
+            margin: 2px;
+            cursor: pointer;
+            padding: 2px;
+            font-size: 16px;
+            width: 13%;
+            text-align: center;
+        }
+        .dropdowncls {
+            margin: 2px;
+            cursor: pointer;
+            padding: 2px;
+            font-size: 16px;
+            width: 65%;
+            text-align: center;
+        }
+        .IEPIndialogoimg {
+            width: 260px;
+            margin-left: 12%;
+            height: 53px;
+        }
+        .FiftyYearlogo {
+            width: 145px;
+            height: 65px;
+        }
+        .overlay {
+            height: 0%;
+            width: 100%;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            background-color: #000000e6;
+            overflow-y: hidden;
+            transition: 0.5s;
+            font-family: DM_SANSvar;
+        }
+        .overlay-content {
+            position: relative;
+            width: 100%;
+            text-align: center;
+            margin-top: 10px;
+            height: auto;
+            overflow-y: scroll;
+        }
+        .overlay a {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 16px;
+            color: #ffffff;
+            display: block;
+            transition: 0.3s;
+            text-align: left;
+            padding-left: 25px;
+        }
+        .overlay a:hover, .overlay a:focus {
+            color: #f1f1f1;
+        }
+        .overlay .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 60px;
+        }
+        .SubmenuDivs {
+            width: 95%;
+            height: auto;
+            margin: 3% auto;
+            padding: 5px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4x4 grid */
+            gap: 10px;
+            font-family: DM_SANSvar;
+        }
+        .SubDiv {
+            width: 100%;
+            height: 85px;
+            display: flex;
+            margin: 0;
+            box-shadow: 0 0px 1px rgb(0 0 0 / 0.1);
+            border-radius: 5px;
+        }
+        .SubDiv:hover {
+            background-color: rgb(253, 251, 250);
+            box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
+        }
+        .Sublogo {
+            width: 20%;
+            padding-top: 3%;
+        }
+        .SubContent {
+            width: 80%;
+            padding: 5px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+        }
+        .Subheader {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 4%;
+        }
+        .SubParaCont {
+            font-size: 13px;
+        }
+        .arrow {
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+            margin-bottom: 3%;
+            padding-left: 3%;
+            border-bottom: 1px solid black;
+            border-right: 1px solid black;
+        }
+        .down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+
+        /* Page Container */
+        .PageContainer {
+            width: 99.9%;
+            height: auto;
+        }
+        .DotsDiv {
+            text-align: center;
+            margin-top: 5px;
+            width: 100%;
+        }
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        .activeDots, .dot:hover {
+            background-color: #717171;
+        }
+        .activeDots, .dot2:hover {
+            background-color: #717171;
+        }
+        .ImpotNoteDiv {
+            color: red;
+            width: 88%;
+            padding: 20px;
+            text-align: justify;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 1% auto;
+            box-shadow: 0px 0px 10px 0px lightgrey;
+            border-radius: 5px;
+            height: 528px;
+            overflow-y: auto;
+        }
+        .FlashImgBanner {
+            width: 99%;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 48%;
+            width: auto;
+            padding: 10px;
+            margin-top: -22px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .prev:hover, .next:hover {
+            color: black;
+            background-color: rgba(255, 253, 253, 0.8);
+        }
+        .MaskBannerImageClass2 {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+        }
+        .ContinueDiv {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        .Continuebtn {
+            width: 120px;
+            padding: 10px;
+            background-color: #304d75;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            box-shadow: inset 0px 0px 5px 2px #304d75;
+            cursor: pointer;
+        }
+        .contentload2 {
+            height: 87%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1%;
+            overflow-y: auto;
+        }
+        .newbox {
+            box-sizing: border-box;
+            padding: 15px;
+            position: relative;
+            overflow: hidden;
+            font-size: 14px;
+        }
+        .newbox::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: repeating-linear-gradient(
+                white 0%,
+                white 7.5px,
+                #1d4172 7.5px,
+                #1d4172 15px,
+                white 15px,
+                white 22.5px,
+                #1d4172 22.5px,
+                #1d4172 30px);
+            transform: translateX(-24%) translateY(-20%) rotate(-45deg);
+            animation: animate 20s linear infinite;
+        }
+        .newbox::after {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: repeating-linear-gradient(
+                white 0%,
+                white 7.5px,
+                #1d4172 7.5px,
+                #1d4172 15px,
+                white 15px,
+                white 22.5px,
+                #1d4172 22.5px,
+                #1d4172 30px);
+            transform: translateX(20%) translateY(46%) rotate(-45deg);
+            animation: animate 20s linear infinite;
+        }
+        @keyframes animate {
+            from {
+                background-position: 0;
+            }
+            to {
+                background-position: 0 450px;
+            }
+        }
+        .Headerflash {
+            width: auto;
+            margin: 1%;
+            border-radius: 10px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0f0f0f;
+            font-family: DM_SANSvar;
+        }
+        .FlashImg {
+            width: 100%;
+            height: auto;
+        }
+        .abs-site-link {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            color: hsla(0, 0%, 0%, .6);
+            font-size: 16px;
+        }
+        .OureveSection {
+            /* background-image: url("Images/PHOTO BACKGROUND.jpg"); */
+        }
+        .EventTitle {
+            width: 100%;
+            text-align: center;
+            height: auto;
+        }
+        .NameDetails {
+            width: 100%;
+            height: 90px !important;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .emptydiv {
+            height: 28px;
+        }
+        .ReviewBox {
+            width: 85%;
+            height: auto;
+        }
+        .ReviewDiv {
+            width: 100%;
+            height: 300px;
+            border: 1px solid black;
+            display: flex;
+        }
+        .FirsContainer {
+            width: 75%;
+            margin: 1% 0% 0% 13%;
+            display: flex;
+        }
+        .SecondContainer {
+            width: 24%;
+            height: 80%;
+            border-radius: 10px;
+            box-shadow: 0px 2px 2px 2px lightgray;
+            animation: pulse-bomb 4s 0s ease-out infinite;
+        }
+        @keyframes pulse-bomb {
+            0% {
+                box-shadow: 0 0 8px 6px rgba(233,233,246, 0), 0 0 0px 0px rgba(233,233,246, 0.2), 0 0 0px 0px rgba(233,233,246, 0);
+                transform: scale(0.75);
+            }
+            10% {
+                box-shadow: 0px 2px 2px 2px lightgray;
+                transform: scale(0.85);
+            }
+            50% {
+                box-shadow: 0px 2px 2px 2px lightgray;
+                transform: scale(0.95);
+            }
+            80% {
+                box-shadow: 0px 2px 2px 2px lightgray;
+                transform: scale(1);
+            }
+        }
+        .Section {
+            margin: 3% auto;
+            display: flex;
+        }
+        .OurEvents {
+            width: 100%;
+            background-image: url("../Images/PHOTO BACKGROUND.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 470px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .ClientSection {
+            width: 100%;
+            height: auto;
+            text-align: center;
+        }
+        .SecContainer {
+            width: 75%;
+            margin: 1% auto;
+            display: flex;
+        }
+        .Handimgclass {
+            width: 90%;
+            height: 80%;
+        }
+        .SecDiv1, .SecDiv2 {
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .SecDiv2 {
+            /* align-items: center; flex-wrap: wrap; align-content: center; */
+        }
+        .searchbtn {
+            width: 150px;
+            margin-top: 4%;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+            border: none;
+            background-color: #1d4172;
+        }
+        .Grpdiscusimg {
+            width: 100%;
+            height: 95%;
+        }
+        .SecDivContent {
+            width: 80%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            align-content: center;
+        }
+        .Div1 {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .Div2 {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: flex-start;
+        }
+        .UpDiv, .DownDiv {
+            width: 100%;
+            padding: 7px;
+            display: flex;
+        }
+        .UpDiv {
+            justify-content: flex-end;
+        }
+        .DownDiv {
+            justify-content: flex-start;
+        }
+        .CategoryDiv {
+            padding: 35px;
+            width: 85%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        .Bcarosuel {
+            width: 70%;
+            height: auto;
+            margin: 1% auto;
+        }
+        .Bcarosuel_1 {
+            margin: 5px;
+            width: 241px;
+            height: auto;
+            cursor: pointer;
+            display: flex !important;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        .Bcarosuel2 {
+            width: 70%;
+            height: auto;
+            margin: 2% auto;
+        }
+        .Bcarosuel_2 {
+            margin: 5px;
+            width: 241px;
+            cursor: pointer;
+            display: flex !important;
+            justify-content: center;
+        }
+        .banerlbl {
+            color: #100f0f;
+            font-size: 16px;
+            font-family: DM_SANSvar;
+        }
+        .BannerImageClass2 {
+            width: 90%;
+            border-radius: 25px;
+            margin: 2px;
+            height: 275px;
+        }
+        .ctheader {
+            font-size: 40px;
+            color: #595050;
+            font-family: Anton;
+        }
+        .ctheader3 {
+            font-size: 35px;
+            color: #595050;
+            font-family: Anton;
+            margin-bottom: 4%;
+        }
+        .OurEveHeader {
+            font-size: 35px;
+            margin: 1%;
+            color: #595050;
+            font-family: Anton;
+        }
+        .Ctheader2 {
+            font-size: 18px;
+            font-family: DM_SANSvar;
+            color: #595050;
+            text-align: justify;
+        }
+        .RevNamecls {
+            font-size: 18px;
+            font-weight: bold;
+            font-family: DM_SANSvar;
+            color: #595050;
+        }
+        .RevPositioncls, .RevCompcls, .RevPlace {
+            font-size: 15px;
+            font-weight: bold;
+            font-family: DM_SANSvar;
+            color: #595050;
+        }
+        .ReviewContent {
+            padding: 5px;
+            text-align: justify;
+            font-family: DM_SANSvar;
+            font-size: 16px;
+            color: #595050;
+        }
+        .FlexRow2 {
+            width: 99%;
+            padding: 5px;
+            margin: 0% auto;
+        }
+        .fade-In-Left {
+            animation: fade-In-Left 1000ms 0ms forwards;
+        }
+        .Fade-In-Right {
+            animation: fade-In-Right 1000ms 0ms forwards;
+        }
+        .Fade-In {
+            animation: fadeIn 1000ms 0ms forwards;
+        }
+        .Fade-Out {
+            animation: fadeOut 1000ms 0ms forwards;
+        }
+        @keyframes fadeIn {
+            from {
+                transform: translateY(200px);
+                opacity: 0;
+            } to {
+                transform: translateY(0px);
+                opacity: 1;
+            }
+        }
+        @keyframes fade-In-Left {
+            from {
+                transform: translateX(-200px);
+                opacity: 0;
+            } to {
+                transform: translateX(0px);
+                opacity: 1;
+            }
+        }
+        @keyframes fade-In-Right {
+            from {
+                transform: translateX(200px);
+                opacity: 0;
+            } to {
+                transform: translateX(0px);
+                opacity: 1;
+            }
+        }
+        @keyframes fadeOut {
+            from {
+                transform: translateY(-200px);
+                opacity: 0;
+            } to {
+                transform: translateY(0px);
+                opacity: 1;
+            }
+        }
+        #mask {
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 3;
+            width: 100%;
+            height: 100%;
+            background: rgba(0%, 0%, 0%, 75%);
+            display: none;
+        }
+        #boxes .window {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            right: 0px;
+            display: none;
+            z-index: 9999;
+            padding: 20px;
+        }
+        #boxes #dialog {
+            width: 100%;
+            height: auto;
+            position: fixed;
+            margin-left: -0.5%;
+        }
+        #mask2 {
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 3;
+            width: 100%;
+            height: 100%;
+            background: rgba(0%, 0%, 0%, 75%);
+            display: none;
+        }
+        #boxes2 .window2 {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            right: 0px;
+            display: none;
+            z-index: 9999;
+            padding: 20px;
+        }
+        #boxes2 #dialog2 {
+            width: 100%;
+            height: auto;
+            position: fixed;
+            margin-left: -0.5%;
+        }
+        #mask3 {
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 3;
+            width: 100%;
+            height: 100%;
+            background: rgba(0%, 0%, 0%, 75%);
+            display: none;
+        }
+        #boxes3 .window3 {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            right: 0px;
+            display: none;
+            z-index: 9999;
+            padding: 20px;
+        }
+        #boxes3 #dialog3 {
+            width: 100%;
+            height: auto;
+            position: fixed;
+            margin-left: -0.5%;
+        }
+        .ModalFullview {
+            position: relative;
+            margin-top: 2%;
+            left: 20%;
+            height: 580px;
+            width: 60%;
+            border-radius: 10px;
+            background: white;
+            font-family: sans-serif;
+            z-index: 99999;
+            font-size: 17px;
+        }
+        .ModalFullview2 {
+            position: relative;
+            margin-top: 0%;
+            left: 20%;
+            height: 620px;
+            width: 60%;
+            border-radius: 10px;
+            background: white;
+            font-family: sans-serif;
+            z-index: 99999;
+            font-size: 16px;
+        }
+        .ModalFullview3 {
+            position: relative;
+            margin-top: 2%;
+            left: 30%;
+            height: auto;
+            width: 40%;
+            border-radius: 10px;
+            background: white;
+            font-family: sans-serif;
+            z-index: 99999;
+            font-size: 17px;
+        }
+        .maskheadFullview {
+            height: auto;
+            text-align: center;
+            color: white;
+            font-family: sans-serif;
+            padding: 10px;
+            border-radius: 9px 9px 0px 0px;
+        }
+        .link-3 {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 100rem;
+            color: black;
+            font-size: 21px;
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: .2s;
+        }
+        .link-3:hover, .link-3:focus {
+            border-color: #595050;
+            transform: rotateY(180deg);
+            cursor: pointer;
+            color: #595050;
+        }
+        .MskTesti {
+            width: 80%;
+            margin: 1% auto;
+            height: auto;
+            border: 1px solid lightgray;
+        }
+        .MskSection {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+        .MskSection2 {
+            width: 100%;
+            height: 480px;
+            overflow-y: scroll;
+            background-color: #fafafa;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,10,0,.50);
+            text-align: justify;
+        }
+        .NameTesti {
+            font-family: DM_SANSvar;
+            color: #595050;
+            font-size: 20px;
+        }
+        .MskSection2 > div {
+            padding: 5px;
+        }
+        .ReviewBoxmsk {
+            width: 29%;
+            height: 255px;
+            border: 1px solid lightgray;
+            display: flex;
+            background-color: #f3f3f3;
+            border-radius: 20px;
+            margin: 2%;
+            flex-direction: column;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0,10,0,.50);
+        }
+        .testULLi li {
+            list-style: disc !important;
+            padding: 0;
+            width: 98%;
+            margin-left: 4%;
+            text-align: justify;
+        }
+        .testULLiDl dd {
+            display: list-item;
+            list-style-type: disc;
+            padding: 0;
+            width: 98%;
+            margin-left: 4%;
+            text-align: justify;
+        }
+        .Contentcls {
+            text-align: justify;
+            font-family: DM_SANSvar;
+            color: #595050;
+        }
+        .FooterContiner {
+            width: 100%;
+            height: auto;
+            font-size: 15px;
+            background-color: #1d4172;
+            display: flex;
+            font-family: DM_SANSvar;
+        }
+        .DisclaimerDiv {
+            padding: 10px;
+            width: 100%;
+            text-align: center;
+            height: auto;
+            font-size: 15px;
+            background-color: #1d4172;
+            color: white;
+            font-family: DM_SANSvar;
+        }
+        .Foot1 {
+            width: 60%;
+            height: auto;
+        }
+        .Foot2 {
+            width: 40%;
+            height: auto;
+        }
+        .LinkSec {
+            margin: 2% 4% 2% 11%;
+            height: auto;
+            width: 93%;
+        }
+        .LinkSec2 {
+            margin: 2% auto;
+            height: auto;
+            width: 85%;
+            padding: 25px;
+        }
+        .LinksSectionFT {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 1%;
+        }
+        .LinksFT {
+            width: 30%;
+            height: auto;
+            padding: 10px;
+        }
+        .LinksFT2 {
+            width: 45%;
+            height: auto;
+            padding: 0px;
+        }
+        .PrdFTlbl {
+            color: white;
+        }
+        .AnchorPrdFTlbl {
+            color: white;
+            text-decoration: none;
+        }
+        .Addresslbl {
+            color: white;
+        }
+        .targetcls {
+            color: white;
+        }
+        .insta {
+            width: 35px;
+        }
+        .Fbcls {
+            width: 30px;
+            height: 35px;
+        }
+        .twitterimg {
+            width: 35px;
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 1200px) {
+            .dropmenubox {
+                width: 18%;
+            }
+            .dropdowncls {
+                width: 80%;
+            }
+        }
+        @media (min-width: 1200px) and (max-width: 1500px) {
+            .dropmenubox {
+                width: 14%;
+            }
+            .dropdowncls {
+                width: 85%;
+            }
+        }
+        @media (min-width: 1000px) and (max-width: 1200px) {
+            .dropmenubox {
+                width: 15%;
+            }
+            .dropdowncls {
+                width: 100%;
+            }
+            .dropdown-content {
+                width: 115%;
+                left: -18%;
+            }
+        }
+        @media (min-width: 1500px) and (max-width: 1700px) {
+            .dropmenubox {
+                width: 13%;
+            }
+            .dropdowncls {
+                width: 80%;
+            }
+        }
+        @media screen and (max-width: 800px) {
+            .dropdowncls {
+                font-size: 13px;
+                width: 100%;
+            }
+            .FiftyYearlogo {
+                width: 130px;
+                height: 69px;
+            }
+            .IEPIndialogoimg {
+                width: 186px;
+                height: 45px;
+                margin-left: 1px;
+            }
+            #navbar-right {
+                width: 76%;
+            }
+            .dropdown-content {
+                width: 131%;
+                left: -31%;
+            }
+            .SubmenuDivs {
+                grid-template-columns: repeat(2, 1fr); /* 2x2 grid for smaller screens */
+                width: 98%;
+                margin: 4% auto;
+            }
+            .SubDiv {
+                width: 100%;
+                margin: 0;
+            }
+            .SubParaCont {
+                font-size: 11px;
+            }
+            .LinksFT {
+                width: 41%;
+                padding: 15px;
+            }
+            .LinkSec {
+                margin: 2% auto;
+                width: 100%;
+            }
+            .LinkSec2 {
+                margin: 2% auto;
+                width: 90%;
+                padding: 10px;
+            }
+            .MaskBannerImageClass2 {
+                width: 95%;
+                height: 100%;
+            }
+            .Section {
+                margin: 3% auto;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .SecondContainer {
+                width: 89%;
+                height: auto;
+                margin: 1% auto;
+            }
+            .Grpdiscusimg {
+                width: 415px;
+            }
+            .FirsContainer {
+                width: 99%;
+                margin: 1% auto;
+                display: flex;
+            }
+            .Div1, .Div2 {
+                width: 100%;
+                height: auto;
+                display: flex;
+            }
+            .CategoryDiv {
+                padding: 18px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-content: center;
+                width: 95%;
+            }
+            .Handimgclass {
+                width: 100%;
+                height: 90%;
+            }
+            .SecContainer {
+                width: 100%;
+                margin: 1% auto;
+                display: flex;
+            }
+            .SecDivContent {
+                width: 90%;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                align-content: center;
+            }
+            .Bcarosuel_2 {
+                margin: 5px;
+                width: 241px;
+                height: auto;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                align-items: center;
+            }
+            .Bcarosuel_1 {
+                margin: 5px;
+                width: 241px;
+                height: 360px;
+                text-align: center;
+                cursor: pointer;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .BannerImageClass2 {
+                width: 85%;
+                border-radius: 25px;
+                height: 250px;
+            }
+            .Bullimg {
+                height: 80%;
+            }
+            .ctheader {
+                font-size: 43px;
+            }
+            .ModalFullview {
+                margin-top: 21%;
+                left: 4%;
+                height: 580px;
+                width: 85%;
+            }
+            .ModalFullview2 {
+                margin-top: 2%;
+                left: 6%;
+                height: 557px;
+                width: 84%;
+            }
+        }
+        @media screen and (max-width: 500px) {
+            .ModalFullview {
+                margin-top: 11%;
+                left: 0%;
+                height: 540px;
+                width: 90%;
+            }
+            .ModalFullview2 {
+                margin-top: 2%;
+                left: 0%;
+                height: 590px;
+                width: 87%;
+            }
+            .ModalFullview3 {
+                margin-top: 2%;
+                left: 0%;
+                height: auto;
+                width: 93%;
+            }
+            .dropdowncls {
+                font-size: 16px;
+                width: 20%;
+            }
+            #navbar {
+                position: fixed;
+                display: block;
+                width: 100%;
+                z-index: 100;
+                height: 80px;
+                top: 0;
+            }
+            #navbar-right {
+                padding: 20px 10px !important;
+                display: none;
+            }
+            .IEPIndialogoimg {
+                width: 50%;
+                background: #ffffff;
+                margin-top: 0px;
+                margin-left: 6px;
+                padding: 5px;
+                border-radius: 1px;
+                height: 45px;
+            }
+            #MobileMenuBtn {
+                display: block;
+            }
+            .nav-toggle {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 22px;
+                width: 22px;
+                margin-top: 60%;
+            }
+            .x:nth-of-type(1) {
+                transition: all 200ms ease-in-out;
+                transform: rotate(45deg);
+                transform-origin: top left;
+                width: 28px;
+            }
+            .x:nth-of-type(2) {
+                transition: all 200ms ease-in-out;
+                transform-origin: center;
+                width: 0;
+            }
+            .x:nth-of-type(3) {
+                transition: all 200ms ease-in-out;
+                transform: rotate(-45deg);
+                transform-origin: bottom left;
+                width: 28px;
+            }
+            .SubmenuDivs {
+                grid-template-columns: 1fr; /* Single column for mobile */
+                width: 98%;
+                margin: 4% auto;
+            }
+            .SubDiv {
+                width: 100%;
+                margin: 1% 0;
+            }
+            .FooterContiner {
+                width: 99.9%;
+                display: flex;
+                flex-direction: column;
+            }
+            .Foot1 {
+                width: 100%;
+            }
+            .Foot2 {
+                width: 100%;
+            }
+            .LinksFT {
+                width: 45%;
+                padding: 8px;
+                font-size: 16px;
+            }
+            .LinkSec {
+                margin: 2% auto;
+                width: 98%;
+            }
+            .ctheader3 {
+                font-size: 25px;
+            }
+            .Handimgclass {
+                width: 97%;
+                height: 84%;
+            }
+            .DisclaimerDiv {
+                padding: 10px;
+                width: 94%;
+                text-align: justify;
+            }
+            .intlbl {
+                font-size: 13px;
+            }
+            .SecondContainer {
+                width: 89%;
+                height: auto;
+                margin: 1% auto;
+            }
+            .PageContainer {
+                width: 99.9%;
+                margin-top: 19%;
+            }
+            .ctheader {
+                font-size: 35px;
+            }
+            .FirsContainer {
+                width: 99%;
+                margin: 1% auto;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .Div1, .Div2 {
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: center;
+            }
+            .SecContainer {
+                width: 100%;
+                margin: 1% auto;
+                display: flex;
+                flex-direction: column;
+            }
+            .Section {
+                margin: 1% auto;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .Bullimg {
+                height: 80%;
+            }
+            .strickerimg {
+                width: 100%;
+            }
+            .FlexRow2 {
+                width: 97%;
+                padding: 5px;
+                margin: 0% auto;
+            }
+            .UpDiv, .DownDiv {
+                width: 100%;
+                padding: 7px;
+                display: flex;
+                align-items: center;
+            }
+            .Bcarosuel_1 {
+                margin: 5px;
+                width: 221px;
+                height: 350px;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-evenly;
+                flex-direction: column;
+                align-items: center;
+            }
+            .ClientSection {
+                width: 100%;
+                height: auto;
+                text-align: center;
+            }
+            .Bcarosuel_2 {
+                margin: 5px;
+                width: 241px;
+                height: 400px;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                align-items: center;
+            }
+            .Grpdiscusimg {
+                width: 98%;
+            }
+            .BannerImageClass2 {
+                width: 100%;
+                border-radius: 25px;
+                height: 250px;
+            }
+            .banerlbl {
+                color: #100f0f;
+                font-size: 15px;
+                font-family: DM_SANSvar;
+            }
+            .NameDetails {
+                width: 100%;
+                height: 119px !important;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .ReviewBox {
+                width: 100%;
+                height: auto;
+            }
+            .MskSection2 {
+                width: 100%;
+                height: 480px;
+                overflow-y: scroll;
+                background-color: #fafafa;
+                padding: 9px;
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0,10,0,.50);
+                text-align: justify;
+            }
+            .contentload2 {
+                height: 85%;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 1%;
+            }
+            .ImpotNoteDiv {
+                color: red;
+                width: 88%;
+                height: 500px;
+                overflow-y: scroll;
+                padding: 20px;
+                text-align: justify;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 1% auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form method="post" action="./Home.aspx" id="ctl00">
+        <div class="aspNetHidden">
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTcxMDYwMzYwNGRknZJHCABUldVcGBzgWVBq8zLOzh4nn6x0JJRBY8dL02Y=" />
+        </div>
+        <div class="aspNetHidden">
+            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="8D0E13E6" />
+        </div>
+
+        <div id="navbar">
+            <a href="Home.aspx"><img src="Images/IRMS_Letterhead_Top.gif" class="IEPIndialogoimg Contrast" /></a>
+            <div id="navbar-right">
+                <div class="MenuDiv">
+                    <div class="dropmenubox">
+                        <div class="dropdowncls" id="Home" onclick="RedirectToPage('Home.aspx')">
+                            <div class="drptbtn">Home</div>
+                        </div>
+                    </div>
+                    <div class="dropmenubox">
+                        <div class="dropdowncls" id="Aboutus" onclick="RedirectToPage('AboutUs.aspx')">
+                            <div class="drptbtn">About</div>
+                        </div>
+                    </div>
+                    <div class="dropmenubox">
+                        <div class="dropdowncls">
+                            <div class="drptbtn">Services <i class="arrow down"></i></div>
+                            <div class="dropdown-content">
+                                <div class="SubmenuDivs">
+                                    <div class="SubDiv" onclick="RedirectToPage('RegistrarsToSTA.aspx')">
+                                        <div class="Sublogo"><img src="Images/services icon/registrar and sta.png" class="ServIcns"></div>
+                                        <div class="SubContent">
+                                            <div class="Subheader">Registrars to Issues & STA</div>
+                                            <div class="SubParaCont">Registrar to Issues & Share Transfer Agent</div>
+                                        </div>
+                                    </div>
+                                    <div class="SubDiv" onclick="RedirectToPage('ConnectivityDepsitory.aspx')">
+                                        <div class="Sublogo"><img src="Images/services icon/depository icon.png" class="ServIcns"></div>
+                                        <div class="SubContent">
+                                            <div class="Subheader">Connectivity with Depositories</div>
+                                            <div class="SubParaCont">I Connect & Services offered for Unlisted & Private Company</div>
+                                        </div>
+                                    </div>
+                                    <div class="SubDiv" onclick="RedirectToPage('KYCRegister.aspx')">
+                                        <div class="Sublogo"><img src="Images/services icon/kyc registration.png" class="ServIcns"></div>
+                                        <div class="SubContent">
+                                            <div class="Subheader">KYC Registration</div>
+                                            <div class="SubParaCont">Investor Services & KYC Registration</div>
+                                        </div>
+                                    </div>
+                                    <div class="SubDiv" onclick="RedirectToPage('SecreterialServices.aspx')">
+                                        <div class="Sublogo"><img src="Images/services icon/secretarial services.png" class="ServIcns"></div>
+                                        <div class="SubContent">
+                                            <div class="Subheader">Secretarial Services</div>
+                                            <div class="SubParaCont">Our Services</div>
+                                        </div>
+                                    </div>
+                                    <div class="SubDiv" onclick="RedirectToPage('TaxExemptionRegistration.aspx')">
+                                        <div class="Sublogo"><img src="Images/services icon/tax exemption.png" class="ServIcns"></div>
+                                        <div class="SubContent">
+                                            <div class="Subheader">Tax Exemption Registration</div>
+                                            <div class="SubParaCont">Our Services</div>
+                                        </div>
+                                    </div>
+                                    <div class="SubDiv" onclick="RedirectToPage('stampDuty.aspx')">
+                                        <div class="Sublogo"><img src="Images/services icon/stamp duty.png" class="ServIcns"></div>
+                                        <div class="SubContent">
+                                            <div class="Subheader">Stamp Duty</div>
+                                            <div class="SubParaCont">Stamp Duty Collection Intermediary</div>
+                                        </div>
+                                    </div>
+                                    <div class="SubDiv" onclick="RedirectToPage('fixeddeposit.aspx')">
+                                        <div class="Sublogo"><img src="Images/services icon/fixed deposit.png" class="ServIcns"></div>
+                                        <div class="SubContent">
+                                            <div class="Subheader">Fixed Deposit Accounting</div>
+                                            <div class="SubParaCont">Fixed Deposit Accounting</div>
+                                        </div>
+                                    </div>
+                                    <div class="SubDiv" onclick="RedirectToPage('investorcharter.aspx')">
+                                        <div class="Sublogo"><img src="Images/services icon/investor charter.png" class="ServIcns"></div>
+                                        <div class="SubContent">
+                                            <div class="Subheader">Investor charter</div>
+                                            <div class="SubParaCont">Investor charter</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropmenubox">
+                        <div class="dropdowncls" onclick="RedirectToPage('ContactUs.aspx')">
+                            <div class="drptbtn">Contact Us</div>
+                        </div>
+                    </div>
+                    <div class="dropmenubox">
+                        <div class="dropdowncls">
+                            <div class="drptbtn">Learn <i class="arrow down"></i></div>
+                            <div class="dropdown-content">
+                                <div class="SubmenuDivs2">
+                                    <div class="SubDiv" onclick="RedirectToPage('ComplainceCalender.aspx')">
+                                        <div class="Sublogo"><img src="Images/login icon.png" class="loginicon"></div>
+                                        <div class="SubContent">
+                                            <div class="Subheader">Compliance Calendar</div>
+                                            <div class="SubParaCont">Click here for Compliance Calendar</div>
+                                        </div>
+                                    </div>
+                                    <div class="SubDiv" onclick="RedirectToPage('CircularAndNotification.aspx')">
+                                        <div class="Sublogo"><img src="Images/login icon.png" class="loginicon"></div>
+                                        <div class="SubContent">
+                                            <div class="Subheader">Circular and Notifications</div>
+                                            <div class="SubParaCont">Click here for Circular Notifications</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropmenubox">
+                        <div class="dropdowncls">
+                            <div class="drptbtn">Login <i class="arrow down"></i></div>
+                            <div class="dropdown-content">
+                                <div class="SubmenuDivs2">
+                                    <div class="SubDiv" onclick="RedirectToPage('https://www.integratedindia.in/DRLogin/MembersLogin.aspx')">
+                                        <div class="Sublogo"><img src="Images/login icon.png" class="loginicon"></div>
+                                        <div class="SubContent">
+                                            <div class="Subheader">Listed Companies</div>
+                                            <div class="SubParaCont">Click here for corporate login</div>
+                                        </div>
+                                    </div>
+                                    <div class="SubDiv" onclick="RedirectToPage('Unlisted_RegistryServices.aspx')">
+                                        <div class="Sublogo"><img src="Images/login icon.png" class="loginicon"></div>
+                                        <div class="SubContent">
+                                            <div class="Subheader">I Connect</div>
+                                            <div class="SubParaCont">Click here for Registry services</div>
+                                        </div>
+                                    </div>
+                                    <div class="SubDiv" onclick="RedirectToPage('SecService.aspx')">
+                                        <div class="Sublogo"><img src="Images/login icon.png" class="loginicon"></div>
+                                        <div class="SubContent">
+                                            <div class="Subheader">I Comply</div>
+                                            <div class="SubParaCont">Click here for Secretarial Services</div>
+                                        </div>
+                                    </div>
+                                    <div class="SubDiv" onclick="RedirectToPage('ShareHolderLogin.aspx')">
+                                        <div class="Sublogo"><img src="Images/login icon.png" class="loginicon"></div>
+                                        <div class="SubContent">
+                                            <div class="Subheader">ShareHolder Login</div>
+                                            <div class="SubParaCont">Click here for members login</div>
+                                        </div>
+                                    </div>
+                                    <div class="SubDiv" onclick="RedirectToPage('AlphaAdmin/login.aspx')">
+                                        <div class="Sublogo"><img src="Images/login icon.png" class="loginicon"></div>
+                                        <div class="SubContent">
+                                            <div class="Subheader">Alpha Admin Login</div>
+                                            <div class="SubParaCont">Click here for DR login</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="LogoDiv">
+                        <a href="#"><img src="Images/50Years.png" class="FiftyYearlogo Contrast" /></a>
+                    </div>
+                </div>
+            </div>
+            <div id="MobileMenuBtn" style="float: right; right: 5%; position: relative;">
+                <div class="nav-toggle" onclick="toggleNav()">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+            <div id="myNav" class="overlay">
+                <div class="overlay-content">
+                    <a id="HomeUs" class="Anchorlinks" href="Home.aspx">Home</a>
+                    <a id="AboutUs" class="Anchorlinks" href="AboutUs.aspx">About</a>
+                    <a id="ServicePage" class="Anchorlinks">Services <span class="Submenuicon SubT1 collapsed">&#x25B6;</span></a>
+                    <div id="HeaderSubmenu" style="margin-left: 10%; display: none;">
+                        <a href="#" onclick="RedirectToPage('RegistrarsToSTA.aspx')">Registrars to issues & STA</a>
+                        <a href="#" onclick="RedirectToPage('ConnectivityDepsitory.aspx')">Connectivity with Depositories</a>
+                        <a href="#" onclick="RedirectToPage('KYCRegister.aspx')">KYC Registration</a>
+                        <a href="#" onclick="RedirectToPage('SecreterialServices.aspx')">Secretarial Services</a>
+                        <a href="#" onclick="RedirectToPage('TaxExemptionRegistration.aspx')">Tax Exemption Registration</a>
+                        <a href="#" onclick="RedirectToPage('stampDuty.aspx')">Stamp Duty</a>
+                        <a href="#" onclick="RedirectToPage('fixeddeposit.aspx')">Fixed Deposit Accounting</a>
+                        <a href="#" onclick="RedirectToPage('investorcharter.aspx')">Investor charter</a>
+                    </div>
+                    <a id="ContactUsPage" class="Anchorlinks" onclick="RedirectToPage('ContactUs.aspx')">Contact Us</a>
+                    <a id="LearnPage" class="Anchorlinks">Learn <span class="Submenuicon SubT2 collapsed">&#x25B6;</span></a>
+                    <div id="learnSubmenu" style="margin-left: 10%; display: none;">
+                        <a href="#" onclick="RedirectToPage('ComplainceCalender.aspx')">Compliance Calendar</a>
+                        <a href="#" onclick="RedirectToPage('CircularAndNotification.aspx')">Circular and Notifications</a>
+                    </div>
+                    <a id="LoginPage" class="Anchorlinks">Login <span class="Submenuicon SubT3 collapsed">&#x25B6;</span></a>
+                    <div id="loginSubmenu" style="margin-left: 10%; display: none;">
+                        <a href="#" onclick="RedirectToPage('https://www.integratedindia.in/DRLogin/MembersLogin.aspx')">Listed Companies</a>
+                        <a href="#" onclick="RedirectToPage('Unlisted_RegistryServices.aspx')">I Connect</a>
+                        <a href="#" onclick="RedirectToPage('SecService.aspx')">I Comply</a>
+                        <a href="#" onclick="RedirectToPage('ShareHolderLogin.aspx')">ShareHolder Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="PageContainer">
+            <section class="Section">
+                <div class="FirsContainer">
+                    <div class="Div1">
+                        <div class="CategoryDiv">
+                            <label class="ctheader">
+                                We are a SEBI Registered Category-1 Registrar and Share Transfer Agent
+                            </label>
+                            <br>
+                            <span class="Ctheader2">
+                                One stop solution provider for all your Corporate Compliance.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="Div2">
+                        <div class="CategoryDiv2">
+                            <img src="Images/silhouette-business-people-meeting-infographic.jpg" class="Grpdiscusimg">
+                        </div>
+                    </div>
+                </div>
+                <div class="SecondContainer" style="display: none;">
+                    <div class="Headerflash newbox" style="--bc: #1d4172; --d: .1s; font-size: 14px; text-align: center; color: white; background-color: #1d4172; padding: 10px; border-radius: 5px 5px 0 0;">What's New</div>
+                    <div class="slideshow-container" style="display: flex; flex-direction: column; padding: 5px 10px; border-radius: 0 0 5px 5px; margin-top: 0; box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-height: 450px; overflow: hidden;">
+                        <div class="scrollable-content" style="flex-grow: 1; overflow-y: auto; padding-right: 1px; margin-bottom: 15px;">
+                            <div class="mySlides fade1 carousel-item" style="width:100%; display: block;">
+                                <div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6;">
+                                    <h3 style="color: #1d4172; margin-bottom: 15px; font-size: 1.2em; text-align: center;">Special Window for Re-lodgement of Transfer Requests of Physical Shares</h3>
+                                    <p style="font-size: 0.9em; margin-bottom: 20px; text-align: justify;">
+                                        SEBI circular No. : SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/97 dated July 02, 2025
+                                    </p>
+                                    <h4 style="color: #e44d26; font-size: 1.1em; text-align: center;">Attention !!!!</h4>
+                                    <div class="content-text" style="text-align: justify;">
+                                        <p style="margin-bottom: 15px;">
+                                            <small>As per SEBI circular No. : SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/97 dated July 02, 2025, a special window is available for a period of six months from <strong style="color: #1d4172;">July 07, 2025 till January 06, 2026</strong> for re-lodgement of transfer deeds, which were lodged prior to the deadline of April 01, 2019 and rejected / returned. During this period, the securities that are re-lodged for transfer shall be issued only in demat mode.</small>
+                                        </p>
+                                        <p style="margin-bottom: 15px;">
+                                            <small>For any queries, please contact us at our email ID : <a href="mailto:einward@integratedindia.in" style="color: #1d4172; cursor:pointer; text-decoration: none; font-weight: bold;">einward@integratedindia.in</a> by quoting the Folio No. or Certificate No. and Name of the Company.</small>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="text-align: center; padding-top: 5px; border-top: 1px solid #ddd;">
+                            <input type="button" value="Please click here to download the circular." style="background-color: #1d4172; color: white; padding: 10px 20px; cursor:pointer; text-decoration: none; border-radius: 5px; display: inline-block;" onclick="NewDowloadClick();">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="Section">
+                <div class="SecContainer">
+                    <div class="SecDiv1">
+                        <img src="Images/HandsImage.png" class="Handimgclass">
+                    </div>
+                    <div class="SecDiv2">
+                        <div class="SecDivContent">
+                            <label class="ctheader3">Corporate Clients</label>
+                            <br><br><br>
+                            <label class="Ctheader2">Our long-standing relationships with key clients in the financial services industry are a testament to our expertise and commitment in delivering exceptional value with excellence</label>
+                            <br>
+                            <label class="Ctheader2">We serve as a trusted Registrar to corporates across all sectors.</label>
+                            <br><br><br>
+                            <input type="button" value="Clientele search" class="searchbtn" onclick="return RedirectToPage('Clienttele.aspx')">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="Section OureveSection">
+                <div class="OurEvents">
+                    <label class="OurEveHeader">New Updates</label>
+                    <div class="FlexRow2">
+                        <div class="Bcarosuel">
+                            <div class='Bcarosuel_1'>
+                                <img src="Images/shanmuga2.jpeg" class="BannerImageClass2" onclick="RedirectoSTA(2)">
+                                <div class="EventTitle"><label class="banerlbl">Shanmuga Hospital Limited</label></div>
+                            </div>
+                            <div class='Bcarosuel_1'>
+                                <img src="Images/Scroller/SME_IPO_Service_care_listing.jpeg" class="BannerImageClass2">
+                                <div class="EventTitle"><label class="banerlbl">Listing Ceremony of Service Care Limited</label></div>
+                            </div>
+                            <div class='Bcarosuel_1'>
+                                <img src="Images/Scroller/photo6.jpg" class="BannerImageClass2">
+                                <div class="EventTitle"><label class="banerlbl">Defence & Technology SME Event</label></div>
+                                <div class="EventTitle"><label class="banerlbl">Chennai Trade Center</label></div>
+                            </div>
+                            <div class='Bcarosuel_1'>
+                                <img src="Images/Scroller/SME_IPO_Service_Care.jpeg" class="BannerImageClass2">
+                                <div class="EventTitle"><label class="banerlbl">Listing Ceremony of Service Care Limited</label></div>
+                            </div>
+                            <div class='Bcarosuel_1'>
+                                <img src="Images/Scroller/BGL_ICSI.jpeg" class="BannerImageClass2">
+                                <div class="EventTitle"><label class="banerlbl">ICSI Event - Bangalore</label></div>
+                            </div>
+                            <div class='Bcarosuel_1'>
+                                <img src="Images/Scroller/photo4.jpg" class="BannerImageClass2">
+                                <div class="EventTitle"><label class="banerlbl">ICSI Event - Bangalore</label></div>
+                            </div>
+                            <div class='Bcarosuel_1'>
+                              </div>
+
+                        </div>
+                    </div>
+                  
+                  </div>
+            </section>
+        </div>
+    </form>
+</body>
+</html>
